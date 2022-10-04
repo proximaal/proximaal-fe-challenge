@@ -8,7 +8,6 @@ Build an application that allows:
 		- can filter by status, city and state
 
 ## Mission
-- [ ] Fork this repository
 - [ ] Build with Vue3
 - [ ] Demonstrate the use of:
 	* State Management Pattern
@@ -25,10 +24,10 @@ Build an application that allows:
 
 ## Please note
 - A JSON dump of the school list is included in the repo
-- We pay attention to your code style and application architecture.
-- Design your Vue components: use props, slots and whatever you need to keep your code clean.
+- We pay attention to your code style and application architecture
+- Design your Vue components: use props, slots and whatever you need to keep your code clean
 
 ## Feel free to
-- Use any open source packages or framework.
-- Edit `README.md` to add documentation.
-- Let us know if theres any questions or concerns.
+- Use any open source packages
+- Edit `README.md` to add documentation
+- Let us know if theres any questions or concerns
