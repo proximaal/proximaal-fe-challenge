@@ -30,4 +30,4 @@ Build an application that allows:
 ## Feel free to
 - Use any open source packages
 - Edit `README.md` to add documentation
-- Let us know if theres any questions or concerns
+- Let us know if there are any questions or concerns
