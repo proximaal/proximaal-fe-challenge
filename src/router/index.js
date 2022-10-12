@@ -7,7 +7,10 @@ const router = createRouter({
     {
       path: '/',
       name: 'home',
-      component: HomeView
+      component: HomeView,
+      meta: {
+        requiresAuth: true
+      }
     },
     {
       path: '/register',
@@ -26,6 +29,23 @@ const router = createRouter({
       component: () => import('../views/LoginView.vue')
     }
   ]
+})
+
+//Check if the user is logged in before accessing the App
+
+router.beforeEach((to, from, next) => {
+  if (to.matched.some(record => record.meta.requiresAuth)) {
+   //Get logged in user from local storage
+   const user = JSON.parse(localStorage.getItem('user'))
+
+    if (!user) {
+     next({ path: '/login'})
+   } else {
+      next();
+  }
+ } else {
+   next();
+ }
 })
 
 export default router
