@@ -1,6 +1,15 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
 import UserMenu from './components/icons/UserMenu.vue'
+import { user } from '@/stores/user'
+import { computed } from 'vue'
+
+const store = user()
+
+const currentUser = computed(() => {
+  return store.user || JSON.parse(localStorage.getItem('user'))
+})
+
 </script>
 
 <template>
@@ -12,7 +21,7 @@ import UserMenu from './components/icons/UserMenu.vue'
         <RouterLink to="/register">Register</RouterLink>
       </nav>
     </div>
-    <UserMenu v-if="$route.name !== 'login'"/>
+    <UserMenu v-if="currentUser && $route.name !== 'login'"/>
   </header>
 
   <RouterView />
