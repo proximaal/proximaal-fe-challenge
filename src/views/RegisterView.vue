@@ -1,10 +1,21 @@
 <script setup>
 import { reactive } from 'vue'
+import { user } from '@/stores/user'
 
 const state = reactive({
   username: '',
   password: ''
 })
+
+const store = user()
+
+const register = (payload) => {
+  payload = {
+    username: state.username,
+    password: state.password
+  }
+  store.registerUser(payload)
+}
 </script>
 
 <template>
@@ -14,7 +25,15 @@ const state = reactive({
     <input  name="username" v-model="state.username" type="text">
     <label for="password">Password</label>
     <input name="password" v-model="state.password" type="password">
-    <button>Register</button>
+    <button @click="register">Register</button>
+    <section v-if="store.error">error</section>
+    <section v-if="store.loading">loading...</section>
+    <section v-if="store.userRegistered">
+      <p>Success!!</p>
+      <router-link to="/login">
+        Please login
+      </router-link>
+    </section>
   </div>
 </template>
 
