@@ -44,6 +44,11 @@ export const user = defineStore('user', {
           this.userError = true
         })
         .finally(() => { this.userLoading = false })
+    },
+    logoutUser() {
+      this.user = null
+      localStorage.removeItem('user')
+      router.push('login')
     }
   },
 })

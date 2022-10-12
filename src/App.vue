@@ -1,5 +1,6 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
+import UserMenu from './components/icons/UserMenu.vue'
 </script>
 
 <template>
@@ -11,6 +12,7 @@ import { RouterLink, RouterView } from 'vue-router'
         <RouterLink to="/register">Register</RouterLink>
       </nav>
     </div>
+    <UserMenu v-if="$route.name !== 'login'"/>
   </header>
 
   <RouterView />
