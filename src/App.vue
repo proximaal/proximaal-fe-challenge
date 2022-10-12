@@ -1,6 +1,6 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
-import UserMenu from './components/icons/UserMenu.vue'
+import UserMenu from './components/UserMenu.vue'
 import { user } from '@/stores/user'
 import { computed } from 'vue'
 
