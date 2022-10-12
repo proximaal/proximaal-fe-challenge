@@ -49,13 +49,18 @@
   "user": [
     {
       "username": "test6",
-      "password": "sasadad",
+      "password": "sasadd",
       "id": "K0YG4xw"
     },
     {
-      "username": "test6",
-      "password": "sasadad",
-      "id": "fLEb9ai"
+      "username": "virgil_the_best",
+      "password": "1234",
+      "id": "3Iwsv14"
+    },
+    {
+      "username": "virgil",
+      "password": "1234",
+      "id": "CmeEy0u"
     }
   ]
 }
