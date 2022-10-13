@@ -2,6 +2,7 @@
 import { reactive, ref } from 'vue'
 import { user } from '@/stores/user'
 import { NButton } from 'naive-ui'
+import { RouterLink} from 'vue-router'
 
 const state = reactive({
   username: '',
@@ -34,4 +35,5 @@ const login = (payload) => {
   <n-button @click="login">login</n-button>
   <section v-if="store.userError">error</section>
   <section v-if="store.userLoading">loading...</section>
+  <RouterLink to="/register">Register</RouterLink>
 </template>
