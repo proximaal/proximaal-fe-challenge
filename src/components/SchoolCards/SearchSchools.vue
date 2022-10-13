@@ -1,19 +1,25 @@
 <script setup>
-import { ref, computed } from 'vue';
+import { ref, computed, watch } from 'vue';
 
 const props = defineProps({
-  schools: Array
+  schools: Array,
+  resetSearch: Function
 })
 
 defineEmits(['searchSelection', 'currentQuery'])
 const query = ref('')
+
 const searchedCards = computed(() => {
   return props.schools
   .filter(school => school.name.toLowerCase()
-  .includes(query.value.toLowerCase()))
-  
+  .includes(query.value.toLowerCase())) 
 })
 
+watch(query, (newVal) => {
+  if (newVal === '') {
+    props.resetSearch()
+  }
+})
 </script>
 
 <template>

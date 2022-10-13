@@ -5,13 +5,13 @@ export function fetchData(url) {
   const data = ref(null)
   const error = ref(null)
   const loading = ref(true)
-  let allData = []
+  const allData = ref(null)
 
   axios.get(url)
     .then((response) => {
       console.log(response.data)
       data.value = response.data
-      allData.push(response.data)
+      allData.value = response.data
     })
     .catch((error) => {
       console.log(error)

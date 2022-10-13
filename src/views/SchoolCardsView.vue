@@ -17,8 +17,8 @@ const statusChoices = ['active', 'pending']
 
 const filterCards = (choice) => {
   // Account for multiple selects
-  data.value = allData[0]
-  if ( cityChoices.includes(choice)) {
+  data.value = allData.value
+  if (cityChoices.includes(choice)) {
     const searchedSchools = data.value.filter(school => school.city === choice)
     data.value = searchedSchools
   } else if (stateChoices.includes(choice)) {
@@ -28,8 +28,12 @@ const filterCards = (choice) => {
     const searchedSchools = data.value.filter(school => school.status === choice)
     data.value = searchedSchools
   } else {
-    data.value = allData[0]
+    data.value = allData.value
   } 
+}
+
+const resetSearch = () => {
+  data.value = allData.value
 }
 
 </script>
@@ -47,7 +51,7 @@ const filterCards = (choice) => {
       />
     <FilterSchools @filter-selection="filterCards" type="status" :choices="statusChoices"/>
     <FilterSchools @filter-selection="filterCards" type="state" :choices="stateChoices"/>
-    <SearchSchools @search-selection="sortCards" :schools="data"/>
+    <SearchSchools @search-selection="sortCards" :schools="data" :resetSearch="resetSearch"/>
     <ul>
       <SchoolCard 
         v-for="school in data" 
