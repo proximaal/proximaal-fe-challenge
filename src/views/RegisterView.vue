@@ -1,5 +1,5 @@
 <script setup>
-import { reactive } from 'vue'
+import { reactive, ref } from 'vue'
 import { user } from '@/stores/user'
 import { NButton } from 'naive-ui'
 
@@ -9,13 +9,18 @@ const state = reactive({
 })
 
 const store = user()
+const required = ref(false)
 
 const register = (payload) => {
-  payload = {
-    username: state.username,
-    password: state.password
+  if (state.username === '' || state.password === '') {
+    required.value = true
+  } else { 
+    payload = {
+      username: state.username,
+      password: state.password
+    }
+    store.registerUser(payload)
   }
-  store.registerUser(payload)
 }
 </script>
 
@@ -27,6 +32,7 @@ const register = (payload) => {
     <label for="password">Password</label>
     <input name="password" v-model="state.password" type="password">
     <n-button @click="register">Register</n-button>
+    <p v-if="required">Username and Password are required fields</p>
     <section v-if="store.error">error</section>
     <section v-if="store.loading">loading...</section>
     <section v-if="store.userRegistered">
