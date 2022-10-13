@@ -9,7 +9,9 @@ export const user = defineStore('user', {
     error: false,
     userRegistered: false,
     userLoading: false,
-    userError: false
+    userError: false,
+    noUser: false,
+    wrongPass: false
   }),
   actions: {
     registerUser(payload) {
@@ -31,13 +33,24 @@ export const user = defineStore('user', {
     loginUser(payload) {
       this.userLoading = true
       this.userError = false
+      this.wrongPass = false
+      this.noUser = false
 
       axios.get(`http://localhost:3000/user?username=${payload.username}`)
         .then((response) => {
-          console.log(response)
-          this.user = response.data[0]
-          localStorage.setItem('user', JSON.stringify(response.data[0]))
-          router.push({ path: '/'})
+          console.log(response.data)
+          // Check for valid username
+          if (response.data.length === 0) {
+            console.log('no user')
+            this.noUser =true
+          // Check for valid password  
+          } else if (response.data[0].password !== payload.password){
+            this.wrongPass = true
+          } else {
+            this.user = response.data[0]
+            localStorage.setItem('user', JSON.stringify(response.data[0]))
+            router.push({ path: '/'})
+          }
         })
         .catch((error) => {
           console.log(error)

@@ -13,6 +13,8 @@ const required = ref(false)
 const store = user()
 
 const login = (payload) => {
+  required.value = false
+  
   if (state.username === '' || state.password === '') {
     required.value = true
   } else {
@@ -36,6 +38,8 @@ const login = (payload) => {
     <n-button @click="login">login</n-button>
     <section v-if="store.userError">error</section>
     <section v-if="store.userLoading">loading...</section>
+    <section v-if="store.noUser">wrong username</section>
+    <section v-if="store.wrongPass">wrong password</section>
     <RouterLink to="/register">Register</RouterLink>
     </div>
 </template>
