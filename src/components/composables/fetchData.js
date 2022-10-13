@@ -5,11 +5,13 @@ export function fetchData(url) {
   const data = ref(null)
   const error = ref(null)
   const loading = ref(true)
+  let allData = []
 
   axios.get(url)
     .then((response) => {
       console.log(response.data)
       data.value = response.data
+      allData.push(response.data)
     })
     .catch((error) => {
       console.log(error)
@@ -17,5 +19,5 @@ export function fetchData(url) {
     })
     .finally(() => { loading.value = false })
     
-  return { data, error, loading }
+  return { data, error, loading, allData }
 }
