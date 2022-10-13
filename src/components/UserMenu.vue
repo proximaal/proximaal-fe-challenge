@@ -1,6 +1,8 @@
 <script setup>
 import { user } from '@/stores/user'
 import { computed } from 'vue'
+import { NButton } from 'naive-ui'
+
 const store = user()
 
 const logout = () => {
@@ -14,5 +16,5 @@ const currentUser = computed(() => {
 
 <template>
   <p>Logged in as {{ currentUser.username }}</p>
-  <button @click="logout">Logout</button>
+  <n-button @click="logout">Logout</n-button>
 </template>

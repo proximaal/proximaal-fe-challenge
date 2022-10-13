@@ -1,6 +1,7 @@
 <script setup>
 import { reactive } from 'vue'
 import { user } from '@/stores/user'
+import { NButton } from 'naive-ui'
 
 const state = reactive({
   username: '',
@@ -24,7 +25,7 @@ const login = (payload) => {
   <input  name="username" v-model="state.username" type="text">
   <label for="password">Password</label>
   <input name="password" v-model="state.password" type="password">
-  <button @click="login">Login</button>
+  <n-button @click="login">login</n-button>
   <section v-if="store.userError">error</section>
   <section v-if="store.userLoading">loading...</section>
 </template>
