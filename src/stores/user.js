@@ -11,7 +11,6 @@ export const user = defineStore('user', {
     userLoading: false,
     userError: false
   }),
-
   actions: {
     registerUser(payload) {
      this.loading = true
