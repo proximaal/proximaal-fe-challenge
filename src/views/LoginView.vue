@@ -26,14 +26,16 @@ const login = (payload) => {
 </script>
 
 <template>
-  <h1>Login</h1>
-  <label for="username">Username</label>
-  <input name="username" v-model="state.username" type="text">
-  <label for="password">Password</label>
-  <input name="password" v-model="state.password" type="password">
-  <p v-if="required">Username and Password are required fields</p>
-  <n-button @click="login">login</n-button>
-  <section v-if="store.userError">error</section>
-  <section v-if="store.userLoading">loading...</section>
-  <RouterLink to="/register">Register</RouterLink>
+  <div>
+    <h1>Login</h1>
+    <label for="username">Username</label>
+    <input name="username" v-model="state.username" type="text">
+    <label for="password">Password</label>
+    <input name="password" v-model="state.password" type="password">
+    <p v-if="required">Username and Password are required fields</p>
+    <n-button @click="login">login</n-button>
+    <section v-if="store.userError">error</section>
+    <section v-if="store.userLoading">loading...</section>
+    <RouterLink to="/register">Register</RouterLink>
+    </div>
 </template>

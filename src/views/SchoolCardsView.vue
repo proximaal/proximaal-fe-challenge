@@ -39,26 +39,28 @@ const resetSearch = () => {
 </script>
 
 <template>
-  <h1>School Cards</h1>
-  <section v-if="loading">
-    <p>Loading...</p>
-  </section>
-  <section v-else-if="data">
-    <FilterSchools 
-      type="city" 
-      :choices="cityChoices"
-      @filter-selection="filterCards"
-      />
-    <FilterSchools @filter-selection="filterCards" type="status" :choices="statusChoices"/>
-    <FilterSchools @filter-selection="filterCards" type="state" :choices="stateChoices"/>
-    <SearchSchools @search-selection="sortCards" :schools="data" :resetSearch="resetSearch"/>
-    <ul>
-      <SchoolCard 
-        v-for="school in data" 
-        :school="school" 
-        :key="school.id" 
-        />
-    </ul>
-  </section>
-  <section v-else>Error</section>
+  <div>
+    <h1>School Cards</h1>
+    <section v-if="loading">
+      <p>Loading...</p>
+    </section>
+    <section v-else-if="data">
+      <FilterSchools @filter-selection="filterCards" 
+        type="city" :choices="cityChoices" />
+      <FilterSchools @filter-selection="filterCards" 
+        type="status" :choices="statusChoices" />
+      <FilterSchools @filter-selection="filterCards" 
+        type="state" :choices="stateChoices" />
+      <SearchSchools @search-selection="sortCards" 
+      :schools="data" :resetSearch="resetSearch" />
+      <ul>
+        <SchoolCard 
+          v-for="school in data" 
+          :school="school" 
+          :key="school.id" 
+          />
+      </ul>
+    </section>
+    <section v-else>Error</section>
+  </div>
 </template>

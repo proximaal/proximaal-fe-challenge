@@ -15,7 +15,7 @@ const currentUser = computed(() => {
 <template>
   <header>
     <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
-    <UserMenu v-if="currentUser && $route.name !== 'login'"/>
+    <UserMenu v-if="currentUser !== null && $route.name !== 'login'"/>
   </header>
   <RouterView />
 </template>
