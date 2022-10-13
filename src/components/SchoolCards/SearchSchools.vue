@@ -4,6 +4,8 @@ import { ref, computed } from 'vue';
 const props = defineProps({
   schools: Array
 })
+
+defineEmits(['searchSelection', 'currentQuery'])
 const query = ref('')
 const searchedCards = computed(() => {
   return props.schools
@@ -18,7 +20,7 @@ const searchedCards = computed(() => {
   <input type="text" placeholder="Search" v-model="query">
   <ul v-if="query !== ''">
     <li v-for="card in searchedCards" :key="card.name">
-     {{ card.name }}
+     <p @click="$emit('searchSelection', card.name)"> {{ card.name }}</p>
     </li>
   </ul>
 </template>
