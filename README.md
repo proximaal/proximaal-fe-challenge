@@ -1,33 +1,41 @@
-# VueJS Code Challenge
-Build an application that allows:
-- user can login and register through a fake API endpoint
-- user can logout
-- after logged in, user can view 
-	- a page with school cards showing basic school details
-		- can search by name with autocomplete
-		- can filter by status, city and state
+# Quasar App (proximaal-fe-challenge)
 
-## Mission
-- [ ] Build with Vue3
-- [ ] Demonstrate the use of:
-	* State Management Pattern
-	* UI components
-	* Composition API
-- [ ] Complete the features based on the requirement above
-- [ ] Write concise commit messages
-- [ ] Submit a merge request and describe your changes precisely
-- [ ] Request review from  `adronitis`  and  `coding-artists`  Github users on the finished work
+A Quasar Project
 
-## Bonus
-- [ ] Build with [Nuxt](https://nuxtjs.org/)
-- [ ] Write Unit tests
+## Install the dependencies
+```bash
+yarn
+# or
+npm install
+```
 
-## Please note
-- A JSON dump of the school list is included in the repo
-- We pay attention to your code style and application architecture
-- Design your Vue components: use props, slots and whatever you need to keep your code clean
+### Start the app in development mode (hot-code reloading, error reporting, etc.)
+```bash
+quasar dev
+```
 
-## Feel free to
-- Use any open source packages
-- Edit `README.md` to add documentation
-- Let us know if there are any questions or concerns
+
+### Lint the files
+```bash
+yarn lint
+# or
+npm run lint
+```
+
+
+### Format the files
+```bash
+yarn format
+# or
+npm run format
+```
+
+
+
+### Build the app for production
+```bash
+quasar build
+```
+
+### Customize the configuration
+See [Configuring quasar.config.js](https://v2.quasar.dev/quasar-cli-webpack/quasar-config-js).
