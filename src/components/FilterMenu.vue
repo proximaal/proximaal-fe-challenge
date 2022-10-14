@@ -58,7 +58,7 @@
 
 <script>
 import { defineComponent } from "vue";
-import { useSchoolStore } from "stores/school";
+import { useSchoolStore } from "../stores/school";
 
 export default defineComponent({
   name: "FilterMenu",
