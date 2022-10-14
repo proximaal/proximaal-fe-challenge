@@ -42,7 +42,7 @@ export const user = defineStore('user', {
           // Check for valid username
           if (response.data.length === 0) {
             console.log('no user')
-            this.noUser =true
+            this.noUser = true
           // Check for valid password  
           } else if (response.data[0].password !== payload.password){
             this.wrongPass = true

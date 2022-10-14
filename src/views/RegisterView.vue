@@ -12,7 +12,7 @@ const store = user()
 const required = ref(false)
 
 const register = (payload) => {
-  state.required = false
+  required.value = false
   
   if (state.username === '' || state.password === '') {
     required.value = true

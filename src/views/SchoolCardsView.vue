@@ -1,8 +1,8 @@
 <script setup>
 import { fetchData } from '../components/composables/fetchData.js'
 import SchoolCard from '../components/SchoolCards/SchoolCard.vue'
-import SearchSchools from "../components/SchoolCards/SearchSchools.vue"
-import FilterSchools from "../components/SchoolCards/FilterSchools.vue"
+import SearchSchools from '../components/SchoolCards/SearchSchools.vue'
+import FilterSchools from '../components/SchoolCards/FilterSchools.vue'
 
 const { data, allData, loading }  = fetchData('http://localhost:3000/school')
 
@@ -52,7 +52,7 @@ const resetSearch = () => {
       <FilterSchools @filter-selection="filterCards" 
         type="state" :choices="stateChoices" />
       <SearchSchools @search-selection="sortCards" 
-      :schools="data" :resetSearch="resetSearch" />
+        :schools="data" :resetSearch="resetSearch" />
       <ul>
         <SchoolCard 
           v-for="school in data" 

@@ -16,7 +16,10 @@ import { reactive } from 'vue'
 <template>
   <div>
     <label for="select">Filter by {{ type }}</label>
-    <select name="select" v-model="state.currentChoice" @change="$emit('filterSelection', $event.target.value)">
+    <select name="select" v-model="state.currentChoice" 
+      @change="$emit('filterSelection', 
+      $event.target.value)"
+    >
       <option value="">All</option>
       <option 
         v-for="(choice, i) in choices" 
