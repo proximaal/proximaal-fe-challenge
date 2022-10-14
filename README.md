@@ -1,33 +1,48 @@
-# VueJS Code Challenge
-Build an application that allows:
-- user can login and register through a fake API endpoint
-- user can logout
-- after logged in, user can view 
-	- a page with school cards showing basic school details
-		- can search by name with autocomplete
-		- can filter by status, city and state
+# Proximaal-Challenge
 
-## Mission
-- [ ] Build with Vue3
-- [ ] Demonstrate the use of:
-	* State Management Pattern
-	* UI components
-	* Composition API
-- [ ] Complete the features based on the requirement above
-- [ ] Write concise commit messages
-- [ ] Submit a merge request and describe your changes precisely
-- [ ] Request review from  `adronitis`  and  `coding-artists`  Github users on the finished work
+Proximaal front end challenge. 
 
-## Bonus
-- [ ] Build with [Nuxt](https://nuxtjs.org/)
-- [ ] Write Unit tests
+## Table of Contents
 
-## Please note
-- A JSON dump of the school list is included in the repo
-- We pay attention to your code style and application architecture
-- Design your Vue components: use props, slots and whatever you need to keep your code clean
+* [Installation](#installation)
+* [Json-Server](#jason-server)
+* [Vue](#vue)
 
-## Feel free to
-- Use any open source packages
-- Edit `README.md` to add documentation
-- Let us know if there are any questions or concerns
+## Installation
+
+From the project folder you need to open a terminal window and run the following command
+
+```
+npm install
+```
+
+After the installation is complete, then run this command
+
+```
+npm run server
+```
+
+This will start the mock api server @ localhost:3000
+
+Run the next command to start the vue application
+
+```
+npm run dev
+```
+
+After this a browser window will open @ localhost:8000
+
+## Json-Server
+
+This package is used to create the mock api server. 
+I connected the server to the school.json file provided and added a new user route to enable the login procedure. 
+
+   - https://www.npmjs.com/package/json-server
+
+## Vue
+
+The app was build using a powerful JavaScript front end framework, called Vue.js. Here is a link to their home page: https://vuejs.org/.
+Vue 3, Composition Api, Pinia(state management) and Vue Router.
+
+### Customize configuration
+See [Configuration Reference](https://cli.vuejs.org/config/).
